@@ -1,0 +1,47 @@
+server:
+    port: 9001
+
+spring:
+  application:
+    name: test-a
+#  datasource:
+#    url: jdbc:db2://10.136.10.101:50000/lis
+#    username: db2inst1
+#    password: db2inst1
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+eureka:
+  client:
+#    healthcheck:
+#      enabled: true
+    serviceurl:
+      defaultZone: http://localhost:8601/eureka/
+
+#test-b:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.example.config.RestTemplateConfig
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 14000
+feign:
+  hystrix:
+    enabled: true
+
+ribbon:
+  #请求处理的超时时间
+  ReadTimeout: 3000
+  #请求连接的超时时间
+  ConnectTimeout: 4000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 1
+#  NFLoadBalancerRuleClassName: com.example.config.RestTemplateConfig
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+
+
+info:
+  app:
+    name: fuzhi<>test-a

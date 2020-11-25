@@ -1,0 +1,45 @@
+server:
+    port: 9003
+
+spring:
+  application:
+    name: test-b
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite://C:/Users/fuzhi/AppData/Roaming/DBeaverData/workspace6/.metadata/sample-database-sqlite-1/Chinook.db
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.entity
+logging:
+  level:
+    tk.mybatis: DEBUG
+    com.example.mapper: DEBUG
+
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#eureka:
+##  instance:
+##  instance:
+##    #eureka客户端需要多长时间发送心跳给eureka服务器，表明他仍然或者，默认30秒
+##    lease-renewal-interval-in-seconds: 500
+##    #eureka服务器在接受到实力的最后一次发出的心跳后，需要等待多久才可以将此实力删除
+##    lease-expiration-duration-in-seconds: 10
+##    metadata-map:
+##      company-name: eureka
+#  client:
+#    #表示eureka client间隔多久去拉取服务器注册信息,默认为30秒
+##    registry-fetch-interval-seconds: 300000
+#    serviceUrl:
+#      defauiltZone: http://localhost:8601/eureka/
+eureka:
+  client:
+    #    healthcheck:
+    #      enabled: true
+    serviceurl:
+      defaultZone: http://localhost:8601/eureka/
+info:
+  app:
+    name: fuzhi<>test-c
+
+

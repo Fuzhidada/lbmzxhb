@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment #指定这是一个deployment
+metadata:
+  name: c-server #这里是deployment的名称
+  namespace: ns-ttylxwxxslp  # 这里是deployment所在的namespace
+spec:
+  replicas: 1 #需要启动几个副本
+  selector:
+    matchLabels:
+      app: c-server #需要管理的pod的名称
+  template: #模板
+    metadata:
+      labels:
+        app: c-server #pod名称
+    spec:
+      containers:
+        - name: c-server #pod名称
+          image: harbortest.picchealth.com/hb-ttylxwxxslp/c-server:latest #容器的镜像
+          ports:
+            - containerPort: 9003 #端口
+              name: httpport
+          resources:
+            limits:
+              cpu: "0.5" #每一个pod的限制
+              memory: 1024Mi #每一个pod的限制
+            requests:
+              cpu: "0.5" #初始值
+              memory: 500Mi #初始值
+#          volumeMounts:  # 使用,挂载volume ,使用下面的配置卷
+#            - name: config-volume #配置卷名称
+#              mountPath: /usr/share/nginx/html #从configmap中加载的数据信息，到哪里
+#      volumes:
+#        - name: config-volume # 随便定义一个volume NAME
+#          configMap: #这里是使用之前应用的configmap
+#            name: configmap-c  # 对应configmap NAME
+
+---
+#创建service
+apiVersion: v1
+kind: Service
+metadata:
+  name: c-server  #service name
+  namespace: ns-ttylxwxxslp #service所在的命名空间
+  labels:
+    app: c-server
+spec:
+  selector:
+    app: c-server #service所管理哪个 pod
+  ports:
+    - name: http
+      port: 9003 #端口  内部或者外部服务 访问的端口
+      targetPort: 9003 #pod的端口  服务实际开放的端口
+      protocol: TCP
+---
+# 将上面 c-service 暴露给外部
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: c-server #name
+  namespace: ns-ttylxwxxslp #命名空间
+#  annotations:
+#    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: cserever.picchealth.com #对外暴露host
+      http:
+        paths:
+          - path: /cserver
+            backend:
+              serviceName: c-server #service name
+              servicePort: 9003 # service port

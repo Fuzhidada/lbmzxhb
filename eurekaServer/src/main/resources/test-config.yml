@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap #类型是configmap
+metadata:
+  name: configmap-c #configMap的名称
+  namespace: ns-ttylxwxxslp #所属的命名空间
+  labels:
+    app: configmap-c #本例中，没有实际意义,建议写成和name一样的值
+#实际内容
+data:
+  index.html: |
+    This is configMap web site!

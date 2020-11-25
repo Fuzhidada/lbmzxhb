@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8ea5fd4e-7aea-4356-8668-31349af83727" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/c-test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/c-test/pom.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/c-test" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="D:\Repository\setting-ali.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1R5sB51qgrjGeVzyS9JohOdyTmY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LP-Dev" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.14508277" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.zuul" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaWork\study\study-c\src\main\java\com\example\work" />
+      <recent name="D:\IdeaWork\study\study-b\src\main\java\com\example\constant" />
+      <recent name="D:\IdeaWork\study\c-test\src\main\java\com\example\constant" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.DD">
+    <configuration name="DD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.operation.DD" />
+      <module name="b (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.operation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sinosoft.eurekaserver.EurekaServerApplication" />
+      <module name="eureka-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sinosoft.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="a" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.AApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="b" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.BApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="b (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.CApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="fuzhi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZuulApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.ZuulApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.EurekaServerApplication" />
+      <item itemvalue="Application.DD" />
+      <item itemvalue="Spring Boot.AApplication" />
+      <item itemvalue="Spring Boot.BApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ZuulApplication" />
+      <item itemvalue="Spring Boot.CApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DD" />
+        <item itemvalue="Spring Boot.CApplication" />
+        <item itemvalue="Spring Boot.ZuulApplication" />
+        <item itemvalue="Spring Boot.EurekaServerApplication" />
+        <item itemvalue="Application.EurekaServerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\fuzhi\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8ea5fd4e-7aea-4356-8668-31349af83727" name="Default Changelist" comment="" />
+      <created>1568968152716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568968152716</updated>
+      <workItem from="1568968154933" duration="32529000" />
+      <workItem from="1569287850874" duration="7366000" />
+      <workItem from="1569313985283" duration="3327000" />
+      <workItem from="1569409212144" duration="2772000" />
+      <workItem from="1569568961628" duration="1428000" />
+      <workItem from="1569750058213" duration="15558000" />
+      <workItem from="1570674110828" duration="957000" />
+      <workItem from="1570683228165" duration="592000" />
+      <workItem from="1570705445908" duration="648000" />
+      <workItem from="1571190696393" duration="1481000" />
+      <workItem from="1571390403479" duration="5923000" />
+      <workItem from="1573693621492" duration="15149000" />
+      <workItem from="1573793878629" duration="1208000" />
+      <workItem from="1573797853932" duration="10547000" />
+      <workItem from="1574056982521" duration="1356000" />
+      <workItem from="1574819973664" duration="1740000" />
+      <workItem from="1576484227784" duration="931000" />
+      <workItem from="1576573684247" duration="9504000" />
+      <workItem from="1577347365257" duration="1377000" />
+      <workItem from="1577416648782" duration="5022000" />
+      <workItem from="1577781592214" duration="755000" />
+      <workItem from="1577782495310" duration="6004000" />
+      <workItem from="1577956085434" duration="53678000" />
+      <workItem from="1578535513405" duration="89000" />
+      <workItem from="1578536765846" duration="103000" />
+      <workItem from="1581562989098" duration="826000" />
+      <workItem from="1581817572814" duration="39000" />
+      <workItem from="1582527061562" duration="4242000" />
+      <workItem from="1582614340466" duration="23000" />
+      <workItem from="1584858545369" duration="4456000" />
+      <workItem from="1585005712718" duration="10102000" />
+      <workItem from="1585152358761" duration="8739000" />
+      <workItem from="1586499438601" duration="44000" />
+      <workItem from="1595467189424" duration="25554000" />
+      <workItem from="1595812390076" duration="6349000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1569751456830</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569751456830</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init">
+      <created>1569811816807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569811816807</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dockerfile 路径">
+      <created>1569814574796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569814574796</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Dockerfile 路径">
+      <created>1569828140841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569828140841</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Dockerfile 路径">
+      <created>1570517027539</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570517027541</updated>
+    </task>
+    <task id="LOCAL-00006" summary="dockers pod 升级测试">
+      <created>1570520428057</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570520428057</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dockers pod 升级测试">
+      <created>1570521276743</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570521276743</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="Dockerfile 路径" />
+    <MESSAGE value="dockers pod 升级测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="dockers pod 升级测试" />
+  </component>
+</project>

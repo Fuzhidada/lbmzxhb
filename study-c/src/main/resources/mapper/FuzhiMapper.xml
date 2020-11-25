@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.FuzhiMapper">
+  <resultMap id="BaseResultMap" type="com.example.entity.Fuzhi">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="a" jdbcType="VARCHAR" property="a" />
+    <result column="b" jdbcType="VARCHAR" property="b" />
+    <result column="c" jdbcType="VARCHAR" property="c" />
+    <result column="d" jdbcType="VARCHAR" property="d" />
+    <result column="e" jdbcType="VARCHAR" property="e" />
+    <result column="f" jdbcType="VARCHAR" property="f" />
+    <result column="g" jdbcType="VARCHAR" property="g" />
+    <result column="h" jdbcType="VARCHAR" property="h" />
+  </resultMap>
+</mapper>
