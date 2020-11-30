@@ -6,7 +6,7 @@ eureka:
     appname: eureka-server
   server:
     enable-self-preservation: false #关闭自我保护
-    eviction-interval-timer-in-ms: 2000 # 剔除 已下线服务
+    eviction-interval-timer-in-ms: 60000 # 剔除 已下线服务
 
 server:
   port: 8761
