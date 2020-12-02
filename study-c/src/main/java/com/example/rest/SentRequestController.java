@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 @RestController
 @Slf4j
+
 public class SentRequestController {
     @Resource
     private FuzhiBiz biz;

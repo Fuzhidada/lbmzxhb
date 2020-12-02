@@ -2,7 +2,6 @@ package com.example.spring.circledependency.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -10,6 +9,7 @@ import javax.annotation.Resource;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Service
+//@Scope("prototype")
 public class Teacher extends Human {
     @Resource
     private Student student;
