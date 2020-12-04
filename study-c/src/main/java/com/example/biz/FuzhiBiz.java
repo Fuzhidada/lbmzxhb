@@ -14,12 +14,15 @@ public class FuzhiBiz {
     @Resource
     FuzhiMapper mapper;
 
+
     @Validated
     public void save(String a) {
         Fuzhi fuzhi = new Fuzhi();
         fuzhi.setA(new Date().toString());
         fuzhi.setB("2");
-
-//        mapper.insert(fuzhi);
+//        mapper.insert(fuzhi);   // sqllite 数据库 本地测试使用
     }
+
+
+
 }
