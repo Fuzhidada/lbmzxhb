@@ -1,5 +1,6 @@
 package com.example.calculation;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 /**
@@ -54,5 +55,6 @@ public class KS implements Sort {
         int[] b = {};
         new KS().sort(a, b);
 
+        Arrays.sort(a);
     }
 }
