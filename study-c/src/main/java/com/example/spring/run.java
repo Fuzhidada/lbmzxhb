@@ -3,7 +3,6 @@ package com.example.spring;
 import com.example.spring.circledependency.entity.Teacher;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.concurrent.locks.*;
 
 /**
  * 理解测试循环依赖
