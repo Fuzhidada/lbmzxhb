@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
 @Slf4j
@@ -39,11 +40,16 @@ public class SentRequestController {
 
     @GetMapping("/hash")
     public void test() {
+
+        ConcurrentHashMap mm=new ConcurrentHashMap(8);
+        mm.put(1,2);
+
+
         //测试hashmap频繁resize
-        HashMap map = new HashMap(2);
+      /*  HashMap map = new HashMap(2);
         for (int i = 0; i < 300; i++) {
             map.put(i, 3);
-        }
+        }*/
     }
 
 }
