@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * 牛客网测试
+ * 华为-求可左右移动NxN阶数组的最大值
  */
 
 public class Main {
@@ -51,7 +52,7 @@ public class Main {
     /**
      *  计算最大数
      */
-    static int getSum(String[] a) {
+    private static int getSum(String[] a) {
 
         int len = a.length;
         int kk = 0;
@@ -60,9 +61,8 @@ public class Main {
         //移动
         for (int i = 0; i <= len - 1; i++) {
             String o = a[0];
-            for (int j = 0; j < len - 1; j++) {
-                a[j] = a[j + 1];
-            }
+            // 源数组 源数组开始复下标制的 目标数组 目标数组开始复制的下标 复制多少个元素
+            System.arraycopy(a, 1, a, 0, len - 1);
             a[len - 1] = o;
 
             for (int m = 0; m < len; m++) {

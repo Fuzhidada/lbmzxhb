@@ -5,7 +5,8 @@ import java.util.Scanner;
 
 
 /**
- * 成语接龙面试题
+ * 华为成语接龙面试题
+ *
  */
 public class Main1 {
 
@@ -30,7 +31,7 @@ public class Main1 {
 
     }
 
-    public static String getM(ArrayList<String> a, char start) {
+    private static String getM(ArrayList<String> a, char start) {
         String temp = "";
         for (int i = 0; i < a.size(); i++) {
             String p = a.get(i);
