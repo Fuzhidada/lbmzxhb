@@ -1,12 +1,7 @@
 package com.example;
 
-import com.example.entity.Foo;
-import com.example.entity.FooListener;
-import com.example.entity.LogEvent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.ConfigurableApplicationContext;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**

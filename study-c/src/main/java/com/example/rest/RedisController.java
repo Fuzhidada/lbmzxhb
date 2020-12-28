@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class RedisController {
@@ -23,6 +25,10 @@ public class RedisController {
         foo.setA(1);
         foo.setB(2);
         foo.setB(22);
+
+        List<String> ss=new ArrayList<>();
+        ss.stream();
+        ss.parallelStream();
     }
 
 

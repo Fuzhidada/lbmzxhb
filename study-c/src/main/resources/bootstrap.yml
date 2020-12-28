@@ -53,4 +53,9 @@ info:
   app:
     name: fuzhi<>test-c
 
+---
+
+spring:
+  profiles:
+    dev
 

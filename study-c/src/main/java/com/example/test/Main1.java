@@ -16,7 +16,6 @@ public class Main1 {
         int k = scanner.nextInt();
         int n = scanner.nextInt();
 
-
         ArrayList<String> a = new ArrayList<>(n);
         for (int i = 0; i < n; i++) {
             a.add(scanner.next());
