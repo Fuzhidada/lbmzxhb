@@ -1,7 +1,4 @@
-package com.example.test;
-
-
-import java.util.*;
+package com.example.hw;
 
 
 public class Solution {
