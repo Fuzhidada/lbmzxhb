@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Scope(value = "singleton")
 
 public class LogAdvice {
-    @Pointcut(value = "execution(public void com.example.biz.*.*(..))")
+    @Pointcut(value = "execution(public void com.example.biz.*.redis*(..))")
     // public 表示public匹配public方法  * 返回类型，int之类的
     // 之后是直到方法的路径 ， 这里表示所有的方法，(..)表示所有参数，可以 是int
     //定义切入的面 pointcut
