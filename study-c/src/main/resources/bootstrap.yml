@@ -26,6 +26,7 @@ logging:
   level:
     tk.mybatis: DEBUG
     com.example.mapper: DEBUG
+  config: classpath:logback-local.xml
 
 #    type: com.alibaba.druid.pool.DruidDataSource
 #    driver-class-name: oracle.jdbc.driver.OracleDriver
@@ -55,6 +56,7 @@ eureka:
 info:
   app:
     name: fuzhi<>test-c
+
 
 ---
 
