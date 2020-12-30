@@ -16,6 +16,7 @@ public abstract class AbstractEmail implements IEmail {
     private static final String EMAIL_PASSWORD = "FZ1316286513";
 
      AbstractEmail() {
+         //单例模式 双重检查机制
         if (mail == null) {
             synchronized (AbstractEmail.class) {
                 if (mail == null) {
