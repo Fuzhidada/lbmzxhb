@@ -1,7 +1,8 @@
 package com.example.biz.email;
 
+
+import org.springframework.mail.SimpleMailMessage;
+
 public interface IEmail {
-    boolean initSender();
-    boolean initReceiver();
-     boolean send();
+    SimpleMailMessage send();
 }
