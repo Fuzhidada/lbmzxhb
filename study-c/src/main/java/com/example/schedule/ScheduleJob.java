@@ -29,7 +29,7 @@ public class ScheduleJob {
     }
 
     @Async //开启异步（多线程）执行
-    @Scheduled(cron = "30 0/1 * * * ?")
+    @Scheduled(cron = "30 0/30 * * * ?")
     public void start2(){
         log.info("定时任务开始执行,thread-name:"+Thread.currentThread().getName());
         Email email = new Email(new EmailBean("1316286513@qq.com","提醒","每晚锻炼身体哦"));
