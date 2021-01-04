@@ -56,4 +56,9 @@ public class SentRequestController {
         return CommonResult.success(biz.beanTest());
     }
 
+    @GetMapping("fallTest")
+    public CommonResult fallTest() {
+        return biz.fallTest();
+    }
+
 }

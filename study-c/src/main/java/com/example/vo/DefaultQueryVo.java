@@ -21,4 +21,8 @@ public class DefaultQueryVo {
     @Moom(message = "mmm测试自定义注解--")
     private Integer dd;
 
+    public DefaultQueryVo(@Min(value = 1, message = "页码最小为1") Integer page, @Max(value = 100, message = "页码最大为100") Integer limit) {
+        this.page = page;
+        this.limit = limit;
+    }
 }

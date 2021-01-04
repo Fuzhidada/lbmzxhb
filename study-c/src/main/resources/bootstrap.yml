@@ -1,6 +1,10 @@
 server:
     port: 9003
 
+info:
+  app:
+    name: fuzhi<>test-c
+
 spring:
   application:
     name: test-b
@@ -53,9 +57,14 @@ eureka:
     register-with-eureka: false #是否向eureka注册
     fetch-registry: false #是否想eureka刷新注册表
 
-info:
-  app:
-    name: fuzhi<>test-c
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 14000
+
 
 
 ---

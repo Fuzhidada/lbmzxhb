@@ -1,8 +1,11 @@
 package com.example.biz;
 
 import com.example.biz.listener.BizEvent;
+import com.example.config.BreakerConfig;
 import com.example.entity.Fuzhi;
 import com.example.mapper.FuzhiMapper;
+import com.example.util.CommonResult;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
@@ -55,5 +58,15 @@ public class FuzhiBiz {
         return k--;
     }
 
+    @HystrixCommand
+    public CommonResult fallTest()  {
+        //配置中
+        BreakerConfig breakerConfig = new BreakerConfig("xxda");
+        return CommonResult.success(breakerConfig.execute());
+    }
+/*
+    public String getFallback(){
+        return "稍后重试下哦";
+    }*/
 
 }
