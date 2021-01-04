@@ -3,20 +3,30 @@ package com.example.biz;
 import com.example.biz.listener.BizEvent;
 import com.example.entity.Fuzhi;
 import com.example.mapper.FuzhiMapper;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.ApplicationScope;
+import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 import javax.annotation.Resource;
 import java.util.Date;
 
 @Service
 //@Scope("singleton")
-//@Scope("prototype")
-//@Scope("request")
+//单独在service层添加了此注解后,并没有生效
+//在controller也添加了就生效了
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+//@Scope(WebApplicationContext.SCOPE_REQUEST)
+// 这样写是无效的 只有singleton和prototype能这样写
 //@Scope("session")
-@Scope("application")
+//@Scope("application")
+//@RequestScope//每个请求k都是3
+//@SessionScope//每个session k都会从头开始
+//@ApplicationScope
 public class FuzhiBiz {
 
     private int k = 3;
@@ -42,8 +52,6 @@ public class FuzhiBiz {
     }
 
     public int beanTest() {
-        /*测试spring的单例*/
-        //测试发现 每次请求 k都会 -- 说明是 biz这个类是单例的
         return k--;
     }
 
