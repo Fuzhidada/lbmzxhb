@@ -59,7 +59,7 @@ public class FuzhiBiz {
     }
 
     @HystrixCommand
-    public CommonResult fallTest()  {
+    public CommonResult fallTest() {
         //配置中
         BreakerConfig breakerConfig = new BreakerConfig("xxda");
         return CommonResult.success(breakerConfig.execute());

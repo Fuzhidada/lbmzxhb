@@ -21,6 +21,7 @@ public class BaseEnum {
     public void setCode(int code) {
         this.code = code;
     }
+
     public String getMessage() {
         return message;
     }

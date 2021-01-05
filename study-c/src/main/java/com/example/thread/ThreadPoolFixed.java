@@ -4,11 +4,9 @@ import java.util.concurrent.*;
 
 /**
  * 固定线程池数
- *
+ * <p>
  * maxpol-core=临时工用完 0s后就被销毁..外包惨啊
  * LinkedBlockingQueue 有序 有界（2的31次方-1）
- *
- *
  */
 public class ThreadPoolFixed {
 

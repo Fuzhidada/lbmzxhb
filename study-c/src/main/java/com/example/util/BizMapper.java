@@ -1,4 +1,5 @@
 package com.example.util;
+
 import org.apache.ibatis.annotations.DeleteProvider;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.provider.base.BaseDeleteProvider;

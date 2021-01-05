@@ -6,12 +6,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- *  此线程为单例线程，只开启一个线程，其他等待中的任务放到
- *  LinkedBlockingQueue
- *  execute 和 submit的区别
- *  submit有返回值future ，线程抛异常时 try catch {future.get} 方法可以捕获到异常
- *  若使用 execute 则 可在ThreadFactory 中 setUncaughtExceptionHandler 对异常进行处理
- *
+ * 此线程为单例线程，只开启一个线程，其他等待中的任务放到
+ * LinkedBlockingQueue
+ * execute 和 submit的区别
+ * submit有返回值future ，线程抛异常时 try catch {future.get} 方法可以捕获到异常
+ * 若使用 execute 则 可在ThreadFactory 中 setUncaughtExceptionHandler 对异常进行处理
  */
 public class ThreadPoolSingle {
 

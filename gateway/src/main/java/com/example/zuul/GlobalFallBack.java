@@ -1,4 +1,4 @@
 package com.example.zuul;
 
-public class GlobalFallBack  {
+public class GlobalFallBack {
 }

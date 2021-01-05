@@ -1,0 +1,54 @@
+server:
+  port: 9004
+### xxl-job 的访问地址
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8999/xxl-job-admin
+### xxl-job 的appname ip不填代表本机
+    executor:
+      appname: plat-job
+      ip: 127.0.0.1
+      port: 9005
+      logpath: /applogs/
+      logretentiondays: -1
+    ### xxl-job, access token
+    accessToken:
+### xxl-job log path
+### xxl-job log retention days
+
+
+spring:
+  application:
+    name: test-b
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite://C:/Users/fuzhi/AppData/Roaming/DBeaverData/workspace6/.metadata/sample-database-sqlite-1/Chinook.db
+  redis:
+    host: localhost
+    port: 6379
+    database: 0 #Redis数据库索引（默认为0）
+    timeout: 50000 #超时时间设置为了 5s
+    jedis:
+      pool:
+        max-active: 50 #连接池最大连接数（使用负值表示没有限制）
+        max-wait: 3000 #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 20 #连接池中的最大空闲连接
+        min-idle: 10 #连接池中的最小空闲连接
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.entity
+logging:
+  level:
+    tk.mybatis: DEBUG
+    com.example.mapper: DEBUG
+
+eureka:
+  client:
+    #    healthcheck:
+    #      enabled: true
+    serviceurl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false #是否向eureka注册
+    fetch-registry: false #是否想eureka刷新注册表

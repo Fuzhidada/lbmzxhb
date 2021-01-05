@@ -4,16 +4,16 @@
 
 
     <update id="createTable" parameterType="string">
-CREATE TABLE ${tableName}
-    (
-       a varchar(200),
-       b varchar(200),
-       c varchar(200),
-       d varchar(200),
-       e varchar(200),
-       f varchar(200),
-       g varchar(200),
-       h varchar(200)
-    );
+        CREATE TABLE ${tableName}
+        (
+        a varchar(200),
+        b varchar(200),
+        c varchar(200),
+        d varchar(200),
+        e varchar(200),
+        f varchar(200),
+        g varchar(200),
+        h varchar(200)
+        );
     </update>
 </mapper>

@@ -20,7 +20,7 @@ public class Task1 implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
-        int a=1/0;
+        int a = 1 / 0;
         Arrays.stream(k).forEach(System.out::print);
         System.out.println();
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern(PATTERN)));

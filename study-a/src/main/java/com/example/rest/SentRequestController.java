@@ -24,7 +24,7 @@ public class SentRequestController {
 //    }
 
     @GetMapping("/testA")
-    public String sendA(){
+    public String sendA() {
 
         System.out.println("开始调用11");
         return testFeign.testB();

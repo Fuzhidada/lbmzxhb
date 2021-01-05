@@ -16,7 +16,7 @@ public class Start {
         try {
             HashMap<String, ArrayList<String>> map = getSqlData();
             for (Map.Entry<String, ArrayList<String>> m : map.entrySet()) {
-                ExecuteSql sql = new ExecuteSql(m.getKey(),m.getValue());
+                ExecuteSql sql = new ExecuteSql(m.getKey(), m.getValue());
                 Thread dataThread = new Thread(sql);
                 dataThread.start();
             }

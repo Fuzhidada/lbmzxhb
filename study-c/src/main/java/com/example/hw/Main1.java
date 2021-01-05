@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 /**
  * 华为成语接龙面试题
- *
  */
 public class Main1 {
 

@@ -6,12 +6,12 @@ import javax.validation.Payload;
 import java.lang.annotation.*;
 
 /**
- *  自定义注解的实现
+ * 自定义注解的实现
  */
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD,ElementType.FIELD,ElementType.PARAMETER})
+@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
 @Constraint(validatedBy = MoomVk.class)
 
 public @interface Moom {

@@ -16,24 +16,24 @@ spring:
             name: default
             fallbackUri: forward:/fallback_Test_A
       routes:             #配置路由规则
-      - id: a
-        uri: lb://test-a
-        predicates:
-        - Path= /**
-        filters:
-        - StripPrefix= 0  #截取url路径
-        - name: Retry     #重试
-          args:
-            retrier: 3
-            statuses: BAD_GATEWAY
-        - name: Hystrix
-          args:
-            name: studyA
-            fallbackUri: forward:/fallback_Test_A
-      - id: b
-        uri: lb://test-b
-        predicates:
-        - Path= /user
+        - id: a
+          uri: lb://test-a
+          predicates:
+            - Path= /**
+          filters:
+            - StripPrefix= 0  #截取url路径
+            - name: Retry     #重试
+              args:
+                retrier: 3
+                statuses: BAD_GATEWAY
+            - name: Hystrix
+              args:
+                name: studyA
+                fallbackUri: forward:/fallback_Test_A
+        - id: b
+          uri: lb://test-b
+          predicates:
+            - Path= /user
 
 hystrix:
   command:

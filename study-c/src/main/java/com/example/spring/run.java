@@ -12,7 +12,7 @@ public class run {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ScanConfig.class);
         applicationContext.getBean(Teacher.class);
-        ThreadLocal a=new ThreadLocal();
+        ThreadLocal a = new ThreadLocal();
         a.set("ThreadLocal");
 
     }

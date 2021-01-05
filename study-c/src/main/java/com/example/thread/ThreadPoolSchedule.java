@@ -5,8 +5,7 @@ import java.util.concurrent.*;
 
 /**
  * 使用DelayedWorkQueue 无边界 内部元素有过期时间 只有过期的才会被取出
- *  executors.schedule(new Task1(), 5, TimeUnit.SECONDS); 可以设置延时时间 不需要 submit
- *
+ * executors.schedule(new Task1(), 5, TimeUnit.SECONDS); 可以设置延时时间 不需要 submit
  */
 
 

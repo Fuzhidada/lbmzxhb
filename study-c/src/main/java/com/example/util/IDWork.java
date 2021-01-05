@@ -1,6 +1,6 @@
 package com.example.util;
 
-public class IDWork{
+public class IDWork {
 
     //下面两个每个5位，加起来就是10位的工作机器id
     private long workerId;    //工作id
@@ -8,13 +8,13 @@ public class IDWork{
     //12位的序列号
     private long sequence;
 
-    public IDWork(long workerId, long datacenterId, long sequence){
+    public IDWork(long workerId, long datacenterId, long sequence) {
         // sanity check for workerId
         if (workerId > maxWorkerId || workerId < 0) {
-            throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0",maxWorkerId));
+            throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
         }
         if (datacenterId > maxDatacenterId || datacenterId < 0) {
-            throw new IllegalArgumentException(String.format("datacenter Id can't be greater than %d or less than 0",maxDatacenterId));
+            throw new IllegalArgumentException(String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
         }
         System.out.printf("worker starting. timestamp left shift %d, datacenter id bits %d, worker id bits %d, sequence bits %d, workerid %d",
                 timestampLeftShift, datacenterIdBits, workerIdBits, sequenceBits, workerId);
@@ -48,15 +48,15 @@ public class IDWork{
     //上次时间戳，初始值为负数
     private long lastTimestamp = -1L;
 
-    public long getWorkerId(){
+    public long getWorkerId() {
         return workerId;
     }
 
-    public long getDatacenterId(){
+    public long getDatacenterId() {
         return datacenterId;
     }
 
-    public long getTimestamp(){
+    public long getTimestamp() {
         return System.currentTimeMillis();
     }
 
@@ -108,13 +108,13 @@ public class IDWork{
     }
 
     //获取系统时间戳
-    private long timeGen(){
+    private long timeGen() {
         return System.currentTimeMillis();
     }
 
     //---------------测试---------------
     public static void main(String[] args) {
-        IDWork worker = new IDWork(1,1,1);
+        IDWork worker = new IDWork(1, 1, 1);
         for (int i = 0; i < 30; i++) {
             System.out.println(worker.nextId());
         }

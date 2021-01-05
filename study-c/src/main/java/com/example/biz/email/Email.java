@@ -48,7 +48,7 @@ public class Email extends AbstractEmail {
     }
 
     public static void main(String[] args) {
-        Email email = new Email(new EmailBean("1316286513@qq.com","提醒","每晚锻炼身体哦"));
+        Email email = new Email(new EmailBean("1316286513@qq.com", "提醒", "每晚锻炼身体哦"));
         email.toSend();
     }
 

@@ -17,25 +17,25 @@ public class GB {
 
     private void sort(int[] a, int low, int mid, int high, int[] temp) {
         int i = 0;
-        int j = low,k = mid+1;  //左边序列和右边序列起始索引
-        while(j <= mid && k <= high){
-            if(a[j] < a[k]){
+        int j = low, k = mid + 1;  //左边序列和右边序列起始索引
+        while (j <= mid && k <= high) {
+            if (a[j] < a[k]) {
                 temp[i++] = a[j++];
-            }else{
+            } else {
                 temp[i++] = a[k++];
             }
         }
         //若左边序列还有剩余，则将其全部拷贝进temp[]中
-        while(j <= mid){
+        while (j <= mid) {
             temp[i++] = a[j++];
         }
 
-        while(k <= high){
+        while (k <= high) {
             temp[i++] = a[k++];
         }
 
-        for(int t=0;t<i;t++){
-            a[low+t] = temp[t];
+        for (int t = 0; t < i; t++) {
+            a[low + t] = temp[t];
         }
 
     }
@@ -46,9 +46,9 @@ public class GB {
 
         new GB().merge(a, 0, a.length - 1, temp);
 
-        for(int i=0;i<a.length;i++){
+        for (int i = 0; i < a.length; i++) {
 
-            System.out.print(a[i]+" ");
+            System.out.print(a[i] + " ");
 
         }
 

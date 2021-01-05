@@ -14,7 +14,7 @@ public class Solution {
         for (int i = 0; i < arr.length - 1; i++) {
             int aa = arr[i] + arr[i + 1];
 
-            if(aa>=temp){
+            if (aa >= temp) {
 
             }
         }

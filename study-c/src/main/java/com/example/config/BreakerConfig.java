@@ -27,7 +27,7 @@ public class BreakerConfig extends HystrixCommand {
                                 .withFallbackIsolationSemaphoreMaxConcurrentRequests(30))
         );
 
-        this.param=param;
+        this.param = param;
     }
 
     @Override

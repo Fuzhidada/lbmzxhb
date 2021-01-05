@@ -21,8 +21,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
 /**
- *  读取数据量庞大的excel。
- *  为什么需要读取数据量大的excel而不使用csv。
+ * 读取数据量庞大的excel。
+ * 为什么需要读取数据量大的excel而不使用csv。
  */
 
 public class ReadExcel {

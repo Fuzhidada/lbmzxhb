@@ -21,17 +21,17 @@ public class RedisTest {
 
     public boolean redisTestString() throws InterruptedException {
 
-        redisTemplate.opsForValue().setIfAbsent("fuzhi","valu测试");
+        redisTemplate.opsForValue().setIfAbsent("fuzhi", "valu测试");
 
         System.out.println(redisTemplate.opsForValue().get("fuzhi"));
 
         // 存在key则不操作 否则操作
-      boolean dd= redisTemplate.opsForValue().setIfAbsent("fuzhi","ddsa");
+        boolean dd = redisTemplate.opsForValue().setIfAbsent("fuzhi", "ddsa");
 
         System.out.println(dd);
 
         //可以看到值 被覆盖了
-        redisTemplate.opsForValue().set("fuzhi","cccccc",10,TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set("fuzhi", "cccccc", 10, TimeUnit.SECONDS);
 
         System.out.println(redisTemplate.opsForValue().get("fuzhi"));
 
@@ -79,21 +79,21 @@ public class RedisTest {
         return true;
     }
 
-    public boolean redisTestZset(){
+    public boolean redisTestZset() {
 
         // zset 会自动排序哦
-        Set<ZSetOperations.TypedTuple<String>> z=new HashSet<>();
-        ZSetOperations.TypedTuple<String> typedTuple1 = new DefaultTypedTuple<>("E",6.0);
-        ZSetOperations.TypedTuple<String> typedTuple2 = new DefaultTypedTuple<>("F",7.0);
-        ZSetOperations.TypedTuple<String> typedTuple3 = new DefaultTypedTuple<>("G",5.0);
+        Set<ZSetOperations.TypedTuple<String>> z = new HashSet<>();
+        ZSetOperations.TypedTuple<String> typedTuple1 = new DefaultTypedTuple<>("E", 6.0);
+        ZSetOperations.TypedTuple<String> typedTuple2 = new DefaultTypedTuple<>("F", 7.0);
+        ZSetOperations.TypedTuple<String> typedTuple3 = new DefaultTypedTuple<>("G", 5.0);
 
         z.add(typedTuple1);
         z.add(typedTuple2);
         z.add(typedTuple3);
 
-        redisTemplate.opsForZSet().add("fuzhi",z);
+        redisTemplate.opsForZSet().add("fuzhi", z);
 
-        System.out.println(redisTemplate.opsForZSet().range("fuzhi",0,-1));
+        System.out.println(redisTemplate.opsForZSet().range("fuzhi", 0, -1));
 
         return true;
     }

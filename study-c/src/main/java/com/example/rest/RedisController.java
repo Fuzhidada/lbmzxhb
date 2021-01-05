@@ -26,7 +26,7 @@ public class RedisController {
         foo.setB(2);
         foo.setB(22);
 
-        List<String> ss=new ArrayList<>();
+        List<String> ss = new ArrayList<>();
         ss.stream();
         ss.parallelStream();
     }

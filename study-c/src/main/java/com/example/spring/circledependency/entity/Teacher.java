@@ -29,10 +29,10 @@ public class Teacher extends Human {
     }*/
 
     /**
-     *  这种无参构造器，在方法里循环依赖字段属性 ，
-     *  循环依赖问题被spring解决，不会异常
+     * 这种无参构造器，在方法里循环依赖字段属性 ，
+     * 循环依赖问题被spring解决，不会异常
      */
-    public Teacher(){
+    public Teacher() {
         System.out.println(student);
     }
 

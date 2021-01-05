@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SentRequestController {
 
     @GetMapping("/testb")
-    public String testB(){
+    public String testB() {
         try {
             Thread.sleep(15000);
         } catch (InterruptedException e) {

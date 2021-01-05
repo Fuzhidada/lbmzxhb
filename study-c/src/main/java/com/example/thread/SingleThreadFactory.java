@@ -21,7 +21,7 @@ public class SingleThreadFactory {
                     factory = new ThreadFactoryBuilder()
                             .setNameFormat("fuzhi-%d")
                             .setUncaughtExceptionHandler((thread, throwable) ->
-                                    System.out.println(thread.getName() + "异常： " + throwable ))
+                                    System.out.println(thread.getName() + "异常： " + throwable))
                             .build();
                 }
             }

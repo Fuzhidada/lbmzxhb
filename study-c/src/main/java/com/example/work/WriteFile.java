@@ -32,6 +32,7 @@ public class WriteFile implements Runnable {
             System.out.println("文件创建异常");
         }
     }
+
     //创建文件命名以表名
     private void createFile() throws IOException {
         file = new File("D://pickData/tt6/" + titleList.get(0) + ".txt");
@@ -84,6 +85,7 @@ public class WriteFile implements Runnable {
 //        createTitle();
 //        writeContent(Lists.newArrayList());
     }
+
     //将数据写入文件
     public void writeContent(ArrayList<String[]> dataList) {
         StringBuffer buffer;
@@ -111,6 +113,7 @@ public class WriteFile implements Runnable {
             e.printStackTrace();
         }
     }
+
     //写入
     private static void serialize(BufferedWriter bw, StringBuffer buffer) {
         try {
@@ -122,6 +125,7 @@ public class WriteFile implements Runnable {
             e.printStackTrace();
         }
     }
+
     //拼接
     private static void split(StringBuffer buffer, String value) {
         //buffer.append("\"");

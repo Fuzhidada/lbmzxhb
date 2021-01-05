@@ -1,5 +1,5 @@
 server:
-    port: 9002
+  port: 9002
 
 spring:
   application:
@@ -12,8 +12,8 @@ spring:
 #    driver-class-name: oracle.jdbc.driver.OracleDriver
 eureka:
   client:
-#    healthcheck:
-#      enabled: true
+    #    healthcheck:
+    #      enabled: true
     serviceurl:
       defaultZone: http://localhost:8601/eureka/
 

@@ -50,7 +50,7 @@ public class Main {
     }
 
     /**
-     *  计算最大数
+     * 计算最大数
      */
     private static int getSum(String[] a) {
 
@@ -71,7 +71,7 @@ public class Main {
             if (kk >= mm) {
                 mm = kk;
             }
-            kk=0;
+            kk = 0;
         }
 
         return mm;

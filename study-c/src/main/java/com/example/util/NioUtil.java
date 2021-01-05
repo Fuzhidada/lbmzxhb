@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- *  nio 复制文件
+ * nio 复制文件
  */
 
 public class NioUtil {
@@ -13,9 +13,9 @@ public class NioUtil {
     private static void fion(String absFileName) {
 
         try (FileInputStream in = new FileInputStream(new File(absFileName));
-             FileOutputStream out = new FileOutputStream(new File(absFileName+"xx.txt"));
+             FileOutputStream out = new FileOutputStream(new File(absFileName + "xx.txt"));
              FileChannel channel = in.getChannel();
-             FileChannel outFile=out.getChannel();
+             FileChannel outFile = out.getChannel();
         ) {
 
             int len;

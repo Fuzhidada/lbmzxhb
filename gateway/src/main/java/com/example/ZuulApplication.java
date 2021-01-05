@@ -21,7 +21,6 @@ public class ZuulApplication {
                         r -> r.path("/test").uri("lb://test-b"))
                 .build();
     }*/
-
     public static void main(String[] args) {
         SpringApplication.run(ZuulApplication.class, args);
     }

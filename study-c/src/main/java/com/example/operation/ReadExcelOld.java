@@ -12,7 +12,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
 
 /**
- *  读excel生成insert语句
+ * 读excel生成insert语句
  */
 public class ReadExcelOld {
 
@@ -21,13 +21,13 @@ public class ReadExcelOld {
 
         try {
 //            CopyOnWriteArrayList ;
-            FutureTask a=new FutureTask(null);
+            FutureTask a = new FutureTask(null);
             a.isDone();
-            ThreadFactory namedFa= new ThreadFactoryBuilder().setNameFormat("read-%d").build();
+            ThreadFactory namedFa = new ThreadFactoryBuilder().setNameFormat("read-%d").build();
             ThreadPoolExecutor executor = new ThreadPoolExecutor(10, 12,
-                    30, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>(),namedFa,new ThreadPoolExecutor.AbortPolicy());
+                    30, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>(), namedFa, new ThreadPoolExecutor.AbortPolicy());
 
-             final String filePath = "D:\\test\\DRUG\\药店清单.xlsx";
+            final String filePath = "D:\\test\\DRUG\\药店清单.xlsx";
 
             List<List<String>> list = new ArrayList<>();
             new ReadExcel(filePath).setHandler(new ReadExcel.SimpleSheetContentsHandler() {
