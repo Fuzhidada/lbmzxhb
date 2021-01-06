@@ -1,7 +1,7 @@
 package com.example.config;
 
 import com.example.exception.BaseException;
-import com.example.util.CommonResult;
+import com.example.common.util.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

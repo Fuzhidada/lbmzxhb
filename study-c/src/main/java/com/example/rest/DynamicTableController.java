@@ -1,7 +1,7 @@
 package com.example.rest;
 
 import com.example.biz.DynamicTableBiz;
-import com.example.util.CommonResult;
+import com.example.common.util.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

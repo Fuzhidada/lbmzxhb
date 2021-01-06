@@ -1,7 +1,7 @@
 package com.example.rest;
 
 import com.example.biz.FuzhiBiz;
-import com.example.util.CommonResult;
+import com.example.common.util.CommonResult;
 import com.example.vo.DefaultQueryVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;

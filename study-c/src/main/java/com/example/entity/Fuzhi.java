@@ -1,6 +1,6 @@
 package com.example.entity;
 
-import com.example.util.ID;
+import com.example.common.util.ID;
 import lombok.Data;
 import tk.mybatis.mapper.annotation.KeySql;
 

@@ -4,7 +4,7 @@ import com.example.biz.listener.BizEvent;
 import com.example.config.BreakerConfig;
 import com.example.entity.Fuzhi;
 import com.example.mapper.FuzhiMapper;
-import com.example.util.CommonResult;
+import com.example.common.util.CommonResult;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.ApplicationContext;
