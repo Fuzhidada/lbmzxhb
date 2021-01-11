@@ -1,6 +1,6 @@
 package com.example.config;
 
-import com.example.exception.BaseException;
+import com.example.common.exception.BaseException;
 import com.example.common.util.CommonResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.ObjectError;

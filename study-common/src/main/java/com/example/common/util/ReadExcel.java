@@ -1,5 +1,7 @@
 package com.example.common.util;
 
+import com.example.common.exception.BaseException;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ooxml.util.SAXHelper;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.openxml4j.opc.PackageAccess;
@@ -24,6 +26,7 @@ import java.util.List;
  * 为什么需要读取数据量大的excel而不使用csv。
  */
 
+@Slf4j
 public class ReadExcel {
 
     private String filename;
@@ -38,7 +41,7 @@ public class ReadExcel {
         return this;
     }
 
-    public void parse() {
+    public void parse() throws BaseException {
         OPCPackage pkg = null;
         InputStream sheetInputStream = null;
 
@@ -52,20 +55,20 @@ public class ReadExcel {
 
             processSheet(styles, strings, sheetInputStream);
         } catch (Exception e) {
-            throw new RuntimeException(e.getMessage(), e);
+            log.error(BaseException.MESSAGE, e);
         } finally {
             if (sheetInputStream != null) {
                 try {
                     sheetInputStream.close();
                 } catch (IOException e) {
-                    throw new RuntimeException(e.getMessage(), e);
+                    log.error(BaseException.MESSAGE, e);
                 }
             }
             if (pkg != null) {
                 try {
                     pkg.close();
                 } catch (IOException e) {
-                    throw new RuntimeException(e.getMessage(), e);
+                    log.error(BaseException.MESSAGE, e);
                 }
             }
         }
@@ -98,7 +101,7 @@ public class ReadExcel {
 
         @Override
         public void endRow(int rowNum) {
-
+            //ll
         }
 
         @Override
@@ -109,6 +112,7 @@ public class ReadExcel {
 
         @Override
         public void headerFooter(String text, boolean isHeader, String tagName) {
+            //undo
         }
 
         static int getCellIndex(String cellReference) {
@@ -117,7 +121,7 @@ public class ReadExcel {
             int result = 0;
             for (int i = 0; i < ref.length(); i++) {
                 char ch = cellReference.charAt(ref.length() - i - 1);
-                num = (int) (ch - 'A' + 1);
+                num = (ch - 'A' + 1);
                 num *= Math.pow(26, i);
                 result += num;
             }

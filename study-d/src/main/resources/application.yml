@@ -4,11 +4,11 @@ server:
 xxl:
   job:
     admin:
-      addresses: http://127.0.0.1:8999/xxl-job-admin
+      addresses: http://192.168.19.128:8999/xxl-job-admin
 ### xxl-job 的appname ip不填代表本机
     executor:
       appname: plat-job
-      ip: 127.0.0.1
+      ip: 192.168.19.128
       port: 9005
       logpath: /applogs/
       logretentiondays: -1

@@ -15,10 +15,18 @@ import java.util.Map;
  */
 @Slf4j
 public class DateUtil {
+    private DateUtil(){
+
+    }
+
     private static final String DATE_FORMAT = "yyyy-MM-dd";
     private static final String DATETIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     private static final ThreadLocal<Map<String, DateFormat>> dateFormatThreadLocal = new ThreadLocal<>();
+
+    public void unload(){
+        dateFormatThreadLocal.remove();
+    }
 
     private static DateFormat getDateFormat(String pattern) {
         if (pattern == null || pattern.trim().length() == 0) {
@@ -107,8 +115,7 @@ public class DateUtil {
      */
     public static Date parse(String dateString, String pattern) {
         try {
-            Date date = getDateFormat(pattern).parse(dateString);
-            return date;
+            return getDateFormat(pattern).parse(dateString);
         } catch (Exception e) {
             log.warn("parse date error, dateString = {}, pattern={}; errorMsg = {}", dateString, pattern, e.getMessage());
             return null;

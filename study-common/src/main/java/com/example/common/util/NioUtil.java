@@ -37,7 +37,6 @@ public class NioUtil {
 
     public static void main(String[] args) {
 
-
         new Thread(() -> {
             NioUtil.fion("D:\\ideawork\\test\\word.txt");
         }).start();

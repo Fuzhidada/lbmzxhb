@@ -29,11 +29,11 @@ public class CommonResult<T> {
         this.message = message;
     }
 
-    public static CommonResult success(Object data) {
+    public static CommonResult<Object> success(Object data) {
         return new CommonResult<>(data);
     }
 
-    public static CommonResult failed(long code, String message) {
+    public static CommonResult<Object> failed(long code, String message) {
         return new CommonResult<>(code, message);
     }
 

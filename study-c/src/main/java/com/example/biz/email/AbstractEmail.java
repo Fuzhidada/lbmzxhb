@@ -8,7 +8,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 @Slf4j
 public abstract class AbstractEmail implements IEmail {
 
-    private static JavaMailSenderImpl mail;
+    private static  JavaMailSenderImpl mail;
 
     private static final String EMAIL_HOST = "smtp.163.com";
     private static final int EMAIL_PORT = 25;
