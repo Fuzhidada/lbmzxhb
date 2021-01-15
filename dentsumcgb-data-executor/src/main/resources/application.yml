@@ -1,0 +1,44 @@
+server:
+  port: 9006
+xxl:
+  job:
+    admin:
+      addresses: http://192.168.8.121:8999/xxl-job-admin
+    executor:
+      appname: dentsumcgb
+      ip: 192.168.19.128
+      port: 9007
+      logpath: /applogs/
+      logretentiondays: -1
+    accessToken:
+
+spring:
+  application:
+    name: dentsumcgb-data-executor
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://10.68.81.19:3306/c1_ods?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: c1_ods
+    password: console&TY324
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.epoch.dentsumcgb.entity
+logging:
+  level:
+    tk.mybatis: DEBUG
+    com.epoch.dentsumcgb.mapper: DEBUG
+
+smb:
+  ip: 10.69.129.53
+  userName: shushu.cui%40dentsu.com
+#  userName: shushu.cui@dentsu.com
+#  passWord: CVdDK#c!G!0uJKph
+  passWord: CVdDK%23c!G!0uJKph
+  #  sharePath: \\CNSR1FSM01\Aegis Groups
+  sharePath: /Aegis Groups/DAN Finance/HQ Operational Finance/11. AIO_ACT_DATA/
+  d365: 01. D365/
+  hyp: 02. HYP/
+  localPath: D:/ideawork/test/

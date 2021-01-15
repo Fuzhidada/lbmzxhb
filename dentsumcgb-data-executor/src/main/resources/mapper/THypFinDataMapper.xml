@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epoch.dentsumcgb.mapper.THypFinDataMapper">
+    <resultMap id="BaseResultMap" type="com.epoch.dentsumcgb.entity.THypFinData">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="CostCenter" jdbcType="VARCHAR" property="costcenter"/>
+        <result column="CostServiceSet" jdbcType="VARCHAR" property="costserviceset"/>
+        <result column="Client" jdbcType="VARCHAR" property="client"/>
+        <result column="Product" jdbcType="VARCHAR" property="product"/>
+        <result column="MasterServiceSet" jdbcType="VARCHAR" property="masterserviceset"/>
+        <result column="LOB" jdbcType="VARCHAR" property="lob"/>
+        <result column="Account" jdbcType="VARCHAR" property="account"/>
+        <result column="Year" jdbcType="VARCHAR" property="year"/>
+        <result column="Entity" jdbcType="VARCHAR" property="entity"/>
+        <result column="Period" jdbcType="VARCHAR" property="period"/>
+        <result column="Amount" jdbcType="DECIMAL" property="amount"/>
+    </resultMap>
+
+    <insert id="batchInsert">
+        insert into t_hyp_fin_data(CostCenter,CostServiceSet,Client,Product,MasterServiceSet,LOB,Account,Year,Entity,Period,Amount)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.costcenter},#{item.costserviceset},#{item.client},#{item.product},#{item.masterserviceset},
+            #{item.lob},#{item.account},#{item.year},#{item.entity},#{item.period},#{item.amount}
+            )
+        </foreach>
+
+    </insert>
+
+</mapper>

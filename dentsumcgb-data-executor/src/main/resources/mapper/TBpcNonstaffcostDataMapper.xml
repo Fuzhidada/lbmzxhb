@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epoch.dentsumcgb.mapper.TBpcNonstaffcostDataMapper">
+  <resultMap id="BaseResultMap" type="com.epoch.dentsumcgb.entity.TBpcNonstaffcostData">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="ENTITY" jdbcType="VARCHAR" property="entity" />
+    <result column="BRAND" jdbcType="VARCHAR" property="brand" />
+    <result column="ACCOUNT" jdbcType="VARCHAR" property="account" />
+    <result column="SEGMENT" jdbcType="VARCHAR" property="segment" />
+    <result column="TIME" jdbcType="VARCHAR" property="time" />
+    <result column="AMOUNT" jdbcType="DECIMAL" property="amount" />
+    <result column="CATEGORY" jdbcType="VARCHAR" property="category" />
+  </resultMap>
+</mapper>
