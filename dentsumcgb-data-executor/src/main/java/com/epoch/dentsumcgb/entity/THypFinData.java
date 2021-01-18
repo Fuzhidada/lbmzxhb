@@ -2,16 +2,17 @@ package com.epoch.dentsumcgb.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.mybatis.dynamic.sql.SqlTable;
+
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "t_hyp_fin_data")
 @Data
-public class THypFinData {
+public class THypFinData extends BaseData {
     @Column(name = "CostCenter")
     private String costcenter;
 

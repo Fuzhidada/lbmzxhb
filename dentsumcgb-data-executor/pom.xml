@@ -64,12 +64,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.22</version>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
@@ -142,10 +136,16 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.mybatis.dynamic-sql</groupId>
-            <artifactId>mybatis-dynamic-sql</artifactId>
-            <version>1.2.1</version>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
+        <!--        <dependency>
+                    <groupId>org.mybatis.dynamic-sql</groupId>
+                    <artifactId>mybatis-dynamic-sql</artifactId>
+                    <version>1.2.1</version>
+                </dependency>-->
 
     </dependencies>
 

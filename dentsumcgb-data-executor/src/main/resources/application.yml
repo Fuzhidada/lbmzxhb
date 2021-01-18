@@ -15,13 +15,23 @@ xxl:
 spring:
   application:
     name: dentsumcgb-data-executor
+  profiles:
+    active: local
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://10.68.81.19:3306/c1_ods?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-    username: c1_ods
-    password: console&TY324
-
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.zaxxer.hikari.HikariDataSource
+#    url: jdbc:mysql://10.68.81.19:3306/c1_ods?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+#    username: c1_ods
+#    password: console&TY324
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 30
+      auto-commit: true
+      idle-timeout: 18000
+      connection-timeout: 6000
+      max-lifetime: 900000
+      connection-test-query: select 1
+      validation-timeout: 1000
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
@@ -42,3 +52,13 @@ smb:
   d365: 01. D365/
   hyp: 02. HYP/
   localPath: D:/ideawork/test/
+
+---
+spring:
+  profiles: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/dentsu?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password:

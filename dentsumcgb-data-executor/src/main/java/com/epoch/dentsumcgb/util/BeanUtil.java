@@ -1,5 +1,6 @@
 package com.epoch.dentsumcgb.util;
 
+import com.epoch.dentsumcgb.entity.BaseData;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Field;
@@ -12,21 +13,23 @@ public class BeanUtil {
     private BeanUtil() {
     }
 
-    public static void revertInputData(String[] title, String[] data, Object o, Map<String, String> mappingMap)
-            throws NoSuchFieldException, InvocationTargetException, IllegalAccessException {
+    public static BaseData revertInputData(String[] title, String[] data, Class<? extends BaseData> clz, Map<String, String> mappingMap)
+            throws NoSuchFieldException, InvocationTargetException, IllegalAccessException, InstantiationException {
 
         int len = title.length;
-        Class<?> c = o.getClass();
-        Method[] methods = c.getMethods();
+
+        BaseData o= clz.newInstance();
+
+        Method[] methods = clz.getMethods();
         for (int i = 0; i < len; i++) {
-            Field field = c.getDeclaredField(mappingMap.get(title[i]));
-//            field.setAccessible(true);
+            Field field = clz.getDeclaredField(mappingMap.get(title[i]));
             for (Method m : methods) {
                 if (m.getName().equalsIgnoreCase("set" + field.getName())) {
                     setField(field.getType(), m, o, data[i]);
                 }
             }
         }
+        return o;
     }
 
     private static void setField(Class<?> type, Method m, Object o, String value)

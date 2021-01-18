@@ -1,7 +1,7 @@
 package com.epoch.dentsumcgb.controller;
 
 import com.epoch.dentsumcgb.job.HYPTask;
-import com.epoch.dentsumcgb.util.smb.SmbUtil;
+import com.epoch.dentsumcgb.config.smb.SmbUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

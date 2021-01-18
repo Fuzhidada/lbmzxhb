@@ -1,4 +1,4 @@
-package com.epoch.dentsumcgb.util.smb;
+package com.epoch.dentsumcgb.config.smb;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.xxl.job.core.context.XxlJobHelper;

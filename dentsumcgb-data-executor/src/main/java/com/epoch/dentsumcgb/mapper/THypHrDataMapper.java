@@ -1,7 +1,12 @@
 package com.epoch.dentsumcgb.mapper;
 
+import com.epoch.dentsumcgb.config.BizMapper;
+import com.epoch.dentsumcgb.entity.THypFinData;
 import com.epoch.dentsumcgb.entity.THypHrData;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface THypHrDataMapper extends Mapper<THypHrData> {
+import java.util.List;
+
+public interface THypHrDataMapper extends BizMapper<THypHrData> {
+    int batchInsert(List<THypHrData> list) ;
 }

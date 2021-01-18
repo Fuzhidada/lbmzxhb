@@ -1,10 +1,17 @@
 package com.epoch.dentsumcgb.entity;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "t_hyp_hr_data")
-public class THypHrData {
+@Data
+public class THypHrData extends BaseData{
     @Column(name = "CostCenter")
     private String costcenter;
 
@@ -29,115 +36,21 @@ public class THypHrData {
     @Column(name = "Amount")
     private BigDecimal amount;
 
-    /**
-     * @return CostCenter
-     */
-    public String getCostcenter() {
-        return costcenter;
+    public static Map<String, String> getMapping() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("CostCenter", "costcenter");
+        map.put("CostServiceSet", "costserviceset");
+        map.put("Client", "client");
+        map.put("Product", "product");
+        map.put("MasterServiceSet", "masterserviceset");
+        map.put("LOBBrand", "lobbrand");
+        map.put("Account", "account");
+        map.put("Year", "year");
+        map.put("Entity", "entity");
+        map.put("Period", "period");
+        map.put("Amount", "amount");
+
+        return map;
     }
 
-    /**
-     * @param costcenter
-     */
-    public void setCostcenter(String costcenter) {
-        this.costcenter = costcenter;
-    }
-
-    /**
-     * @return CostServiceSet
-     */
-    public String getCostserviceset() {
-        return costserviceset;
-    }
-
-    /**
-     * @param costserviceset
-     */
-    public void setCostserviceset(String costserviceset) {
-        this.costserviceset = costserviceset;
-    }
-
-    /**
-     * @return LOBBrand
-     */
-    public String getLobbrand() {
-        return lobbrand;
-    }
-
-    /**
-     * @param lobbrand
-     */
-    public void setLobbrand(String lobbrand) {
-        this.lobbrand = lobbrand;
-    }
-
-    /**
-     * @return HRAccount
-     */
-    public String getHraccount() {
-        return hraccount;
-    }
-
-    /**
-     * @param hraccount
-     */
-    public void setHraccount(String hraccount) {
-        this.hraccount = hraccount;
-    }
-
-    /**
-     * @return Year
-     */
-    public String getYear() {
-        return year;
-    }
-
-    /**
-     * @param year
-     */
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    /**
-     * @return Entity
-     */
-    public String getEntity() {
-        return entity;
-    }
-
-    /**
-     * @param entity
-     */
-    public void setEntity(String entity) {
-        this.entity = entity;
-    }
-
-    /**
-     * @return Period
-     */
-    public String getPeriod() {
-        return period;
-    }
-
-    /**
-     * @param period
-     */
-    public void setPeriod(String period) {
-        this.period = period;
-    }
-
-    /**
-     * @return Amount
-     */
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    /**
-     * @param amount
-     */
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
 }

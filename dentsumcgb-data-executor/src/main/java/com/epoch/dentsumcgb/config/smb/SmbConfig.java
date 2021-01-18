@@ -1,4 +1,4 @@
-package com.epoch.dentsumcgb.util.smb;
+package com.epoch.dentsumcgb.config.smb;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,7 +36,6 @@ public class SmbConfig {
     @Lazy
     Smb d365() {
         String remoteUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + d365;
-        log.info("d365共享文件地址: {}", remoteUrl);
         return new Smb(remoteUrl, localPath + d365);
     }
 
@@ -44,7 +43,6 @@ public class SmbConfig {
     @Lazy
     Smb hyp() {
         String remoteUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + hyp;
-        log.info("hyp共享文件地址: {}", remoteUrl);
         return new Smb(remoteUrl, localPath + hyp);
     }
 }

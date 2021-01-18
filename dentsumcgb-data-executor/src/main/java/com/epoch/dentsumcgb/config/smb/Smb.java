@@ -1,4 +1,4 @@
-package com.epoch.dentsumcgb.util.smb;
+package com.epoch.dentsumcgb.config.smb;
 
 import com.epoch.dentsumcgb.util.DateUtil;
 import com.xxl.job.core.context.XxlJobHelper;
