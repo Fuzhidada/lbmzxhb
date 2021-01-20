@@ -23,6 +23,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.net.MalformedURLException;
+import java.util.concurrent.Future;
 
 @Component
 @Slf4j
@@ -47,9 +48,9 @@ public class D365Task {
 
     public void dealData() {
         SmbFile[] files;
+
         try {
             files = d365.getSmbFile().listFiles();
-
             for (SmbFile file : files) {
                 if (!file.isFile()) {
                     continue;
@@ -64,6 +65,7 @@ public class D365Task {
                             biz.readAndInsert(file, TD365ActCpsData.class, actCpsDataMapper, TD365ActCpsData.getMapping(), SysType.d365.getValue(), d365));
                 }
             }
+            XxlJobHelper.handleResult(200, "d365任务开始执行,文件数量: " + files.length);
         } catch (MalformedURLException | SmbException e) {
             XxlJobHelper.handleResult(500, "操作共享文件时出现异常" + ExceptionUtils.getStackTrace(e));
         }

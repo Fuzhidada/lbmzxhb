@@ -12,7 +12,7 @@ public class ThreadUtil {
     public static final int SKIP_SIZE = 5000;
     public static final int WAIT_TIME = 60 * 10;
 
-    private static final ExecutorService executor = new ThreadPoolExecutor(2, 2,
+    private static final ExecutorService executor = new ThreadPoolExecutor(4, 4,
             60, TimeUnit.SECONDS,
             new LinkedBlockingQueue<>(5000),
             new ThreadFactoryBuilder().setNameFormat("dentsu-start-%d").build());

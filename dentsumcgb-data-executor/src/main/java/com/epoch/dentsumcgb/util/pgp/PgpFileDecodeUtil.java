@@ -123,7 +123,7 @@ public class PgpFileDecodeUtil {
                 if (!pbe.verify()) {
                     log.error("message failed integrity check");
                 } else {
-                    log.error("message integrity check passed");
+                    log.debug("message integrity check passed");
                 }
 
             } else {
@@ -196,7 +196,7 @@ public class PgpFileDecodeUtil {
      */
     public static void main(String[] s) throws Exception {
         Security.addProvider(new BouncyCastleProvider());
-        boolean encryp = true;  //加密：true  解密：false
+        boolean encryp = false;  //加密：true  解密：false
         if (encryp) {
             String outPath = "D:\\ideawork\\test\\word.DAT";
             String inputPath = "D:\\ideawork\\test\\word.txt";
@@ -206,7 +206,7 @@ public class PgpFileDecodeUtil {
             String inputPath;
             String outPath;
             String address = "D:\\ideawork\\test\\";
-            String password = "dentsumcgb@payroll";  //私钥的Key
+            String password = "dentsumcgb@aio!@";  //私钥的Key
             String privateKeys = "secret";//私钥地址
 
             List<String> fileList = ReadFileName(address);

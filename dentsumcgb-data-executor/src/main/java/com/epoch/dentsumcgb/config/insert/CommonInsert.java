@@ -2,12 +2,14 @@ package com.epoch.dentsumcgb.config.insert;
 
 import com.epoch.dentsumcgb.config.BizMapper;
 import com.epoch.dentsumcgb.util.ThreadUtil;
+import com.xxl.job.core.context.XxlJobHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -22,7 +24,7 @@ public class CommonInsert {
     @Autowired
     private PlatformTransactionManager transactionManager;
 
-    public Integer setDB(ArrayList list, BizMapper mapper) {
+    public Integer setDB(ArrayList list, BizMapper mapper) throws SQLException {
 
         int k = list.size() / SKIP_SIZE + 1;
         Future[] futures = new Future[k];
@@ -42,7 +44,7 @@ public class CommonInsert {
         try {
             runLatch.await();
         } catch (InterruptedException e) {
-            log.error("插入任务执行超时 {}", ExceptionUtils.getStackTrace(e));
+            XxlJobHelper.log("插入任务执行超时 {} ", ExceptionUtils.getStackTrace(e));
             Thread.currentThread().interrupt();
         }
 
@@ -55,10 +57,10 @@ public class CommonInsert {
             try {
                 result += (Integer) f.get();
             } catch (InterruptedException e) {
-                log.error("中断异常 {}", ExceptionUtils.getStackTrace(e));
+                XxlJobHelper.log("中断异常{} ", ExceptionUtils.getStackTrace(e));
                 Thread.currentThread().interrupt();
             } catch (ExecutionException e) {
-                log.error("执行插入语句发生了异常 {}", ExceptionUtils.getStackTrace(e));
+                throw new SQLException(e);
             }
         }
 

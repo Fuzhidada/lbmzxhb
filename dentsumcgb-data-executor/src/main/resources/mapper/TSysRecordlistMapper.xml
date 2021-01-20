@@ -9,6 +9,13 @@
     <result column="sysname" jdbcType="VARCHAR" property="sysname" />
     <result column="filename" jdbcType="VARCHAR" property="filename" />
     <result column="rownum" jdbcType="INTEGER" property="rownum" />
+    <result column="msg" jdbcType="VARCHAR" property="msg" />
     <result column="datatime" jdbcType="TIMESTAMP" property="datatime" />
   </resultMap>
+
+  <select id="selectByDate" parameterType="Date" resultType="com.epoch.dentsumcgb.entity.TSysRecordlist">
+    select * from t_sys_recordlist
+    where datatime <![CDATA[>=]]> #{datetime} and msg is not null
+
+  </select>
 </mapper>

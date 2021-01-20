@@ -16,6 +16,7 @@ import java.util.Date;
 
 /**
  * 生成公钥和私钥
+ *
  * @author fuzhi
  */
 public class PgpGeneratorKeyUtil {
@@ -78,21 +79,21 @@ public class PgpGeneratorKeyUtil {
     @SuppressWarnings("restriction")
     public static void main(String[] args) throws Exception {
         Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
-        String user = "yuanian@dentsumcgb";
-        String password = "dentsumcgb@payroll";
-
+        String user = "yuanian@dentsu";
+        String password = "dentsumcgb@aio!@";
         PGPSecretKey secretKey = PgpGeneratorKeyUtil.getSecretKey(user, password, 2048);
-
         // 这里打印私钥-------------重要
         String privateKeyString = new Base64().encodeToString(secretKey.getEncoded());
         System.out.println(privateKeyString);
 
         PGPPublicKey publicKey = secretKey.getPublicKey();
-        //FileOutputStream fileOutputStream = new FileOutputStream("c://1.txt");
         byte[] encoded = publicKey.getEncoded();
         // 这里打印公钥----------------重要
         String publicKeyString = new Base64().encodeToString(encoded);
         System.out.println(publicKeyString);
+
+        //上述打印出的公钥与密钥可能在 portable pgp软件中无法识别，（缺少一些信息）
+        //所以还是用portable pgp 生成公钥密钥，再使用pgputil加解密吧
     }
 
 

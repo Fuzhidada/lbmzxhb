@@ -63,7 +63,8 @@ public class Smb implements Callable<Boolean> {
             String[] fileSplit = name.split("\\.");
 
             SmbFile newFile = loginSmb(newdir + fileSplit[0] + A + DateUtil.getFormatDateHMS() + B + fileSplit[1]);
-            log.info("将要移动到新文件: {}", newFile);
+            XxlJobHelper.log("将要移动到新文件 {}", newFile);
+            //@TODO 测试先注释了 ,上线在打开
 //            remoteFile.copyTo(newFile);
 //            remoteFile.delete();
             closeSmb(newFile, newdir, remoteFile);

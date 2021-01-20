@@ -60,6 +60,8 @@ public class HYPTask {
                             biz.readAndInsert(file, THypHrData.class, hypHrDataMapper, THypHrData.getMapping(), SysType.hyp.getValue(), hyp));
                 }
             }
+
+            XxlJobHelper.handleResult(200, "hyp任务开始执行,文件数量: " + files.length);
         } catch (MalformedURLException | SmbException e) {
             XxlJobHelper.handleResult(500, "操作共享文件时出现异常" + ExceptionUtils.getStackTrace(e));
         }
