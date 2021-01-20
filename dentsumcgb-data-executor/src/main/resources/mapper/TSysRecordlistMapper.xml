@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epoch.dentsumcgb.mapper.TSysRecordlistMapper">
+  <resultMap id="BaseResultMap" type="com.epoch.dentsumcgb.entity.TSysRecordlist">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sysname" jdbcType="VARCHAR" property="sysname" />
+    <result column="filename" jdbcType="VARCHAR" property="filename" />
+    <result column="rownum" jdbcType="INTEGER" property="rownum" />
+    <result column="datatime" jdbcType="TIMESTAMP" property="datatime" />
+  </resultMap>
+</mapper>

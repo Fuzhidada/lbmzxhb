@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epoch.dentsumcgb.mapper.TD365ActCpsDataMapper">
+    <resultMap id="BaseResultMap" type="com.epoch.dentsumcgb.entity.TD365ActCpsData">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="CompanyId" jdbcType="VARCHAR" property="companyId"/>
+        <result column="BPCEntity" jdbcType="VARCHAR" property="bpcentity"/>
+        <result column="Date" jdbcType="VARCHAR" property="date"/>
+        <result column="Datasource" jdbcType="VARCHAR" property="datasource"/>
+        <result column="Datatype" jdbcType="VARCHAR" property="datatype"/>
+        <result column="DataAttribute" jdbcType="VARCHAR" property="dataattribute"/>
+        <result column="Nominalcode" jdbcType="VARCHAR" property="nominalcode"/>
+        <result column="MainAccountName" jdbcType="VARCHAR" property="mainaccountname"/>
+        <result column="BPCCode" jdbcType="VARCHAR" property="bpccode"/>
+        <result column="Functionalarea" jdbcType="VARCHAR" property="functionalarea"/>
+        <result column="Networkbrand" jdbcType="VARCHAR" property="networkbrand"/>
+        <result column="BPCClient" jdbcType="VARCHAR" property="bpcclient"/>
+        <result column="Clientname" jdbcType="VARCHAR" property="clientname"/>
+        <result column="ServiceSegment" jdbcType="VARCHAR" property="servicesegment"/>
+        <result column="ServiceSegmentName" jdbcType="VARCHAR" property="servicesegmentname"/>
+        <result column="Channel" jdbcType="VARCHAR" property="channel"/>
+        <result column="ChannelName" jdbcType="VARCHAR" property="channelname"/>
+        <result column="BPCServices" jdbcType="VARCHAR" property="bpcservices"/>
+        <result column="BPCServicesName" jdbcType="VARCHAR" property="bpcservicesname"/>
+        <result column="VendorCode" jdbcType="VARCHAR" property="vendorcode"/>
+        <result column="Vendor" jdbcType="VARCHAR" property="vendor"/>
+        <result column="Analysiscode" jdbcType="VARCHAR" property="analysiscode"/>
+        <result column="Analysis" jdbcType="VARCHAR" property="analysis"/>
+        <result column="Currency" jdbcType="VARCHAR" property="currency"/>
+        <result column="CostCenter" jdbcType="VARCHAR" property="costcenter"/>
+        <result column="Amount" jdbcType="DECIMAL" property="amount"/>
+    </resultMap>
+
+    <insert id="batchInsert">
+        insert into t_d365_act_cps_data
+        (
+        CompanyId,BPCEntity,Date,Datasource,Datatype,DataAttribute,Nominalcode,MainAccountName,BPCCode,
+        Functionalarea,Networkbrand,BPCClient,Clientname,ServiceSegment,ServiceSegmentName,Channel,
+        ChannelName,BPCServices,BPCServicesName,VendorCode,Vendor,Analysiscode,
+        Analysis,Currency,CostCenter,Amount
+        )
+        values
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.companyId},#{item.bpcentity},#{item.date},
+            #{item.datasource},#{item.datatype},#{item.dataattribute},#{item.nominalcode},
+            #{item.mainaccountname},#{item.bpccode},#{item.functionalarea},#{item.networkbrand},
+            #{item.bpcclient},#{item.clientname},#{item.servicesegment},#{item.servicesegmentname},
+            #{item.channel},#{item.channelname},#{item.bpcservices},#{item.bpcservicesname},
+            #{item.vendorcode},#{item.vendor},#{item.analysiscode},#{item.analysis},#{item.currency},
+            #{item.costcenter},#{item.amount}
+            )
+        </foreach>
+
+    </insert>
+</mapper>
