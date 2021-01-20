@@ -1,6 +1,7 @@
 package com.epoch.dentsumcgb.config.insert;
 
 import com.epoch.dentsumcgb.config.BizMapper;
+import com.epoch.dentsumcgb.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -53,7 +54,7 @@ public class InsertTask implements Callable<Integer> {
             runLatch.countDown();
 
             // 等待其他线程执行完毕,若60秒内还没执行完毕，即抛异常
-            boolean wait = rollBackLatch.await(120, TimeUnit.SECONDS);
+            boolean wait = rollBackLatch.await(ThreadUtil.WAIT_TIME, TimeUnit.SECONDS);
             if (!wait) {
                 throw new RuntimeException("执行insert语句时超时 {}" + list.size());
             }

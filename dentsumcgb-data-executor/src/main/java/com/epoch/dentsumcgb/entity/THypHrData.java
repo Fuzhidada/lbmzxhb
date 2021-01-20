@@ -40,11 +40,8 @@ public class THypHrData extends BaseData{
         HashMap<String, String> map = new HashMap<>();
         map.put("CostCenter", "costcenter");
         map.put("CostServiceSet", "costserviceset");
-        map.put("Client", "client");
-        map.put("Product", "product");
-        map.put("MasterServiceSet", "masterserviceset");
         map.put("LOBBrand", "lobbrand");
-        map.put("Account", "account");
+        map.put("HRAccount", "hraccount");
         map.put("Year", "year");
         map.put("Entity", "entity");
         map.put("Period", "period");

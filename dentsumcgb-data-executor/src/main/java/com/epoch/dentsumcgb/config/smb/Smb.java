@@ -19,15 +19,17 @@ import java.util.concurrent.*;
 @Slf4j
 public class Smb implements Callable<Boolean> {
 
+    private static final String A = "-";
+    private static final String B = ".";
 
     private String localPath;
+
+    private String backupPath;
     private String remoteUrl;
 
-    private static final String BACKUP = "backup/";
-
-    public Smb(String remoteUrl, String localPath) {
+    public Smb(String remoteUrl, String backupPath) {
         this.remoteUrl = remoteUrl;
-        this.localPath = localPath;
+        this.backupPath = backupPath;
     }
 
     private SmbFile loginSmb(String remoteUrl) throws MalformedURLException {
@@ -38,7 +40,11 @@ public class Smb implements Callable<Boolean> {
         //  remoteFile.connect();
     }
 
-    private void closeSmb(SmbFile... remoteFiles) {
+    public SmbFile getSmbFile() throws MalformedURLException {
+        return loginSmb(remoteUrl);
+    }
+
+    public void closeSmb(SmbFile... remoteFiles) {
         for (SmbFile remoteFile : remoteFiles) {
             if (remoteFile != null) {
                 remoteFile.close();
@@ -46,21 +52,25 @@ public class Smb implements Callable<Boolean> {
         }
     }
 
-    private void remoteMove(SmbFile remoteFile) throws MalformedURLException, SmbException {
+    public void remoteMove(SmbFile remoteFile) throws MalformedURLException, SmbException {
         if (remoteFile != null) {
             //不适用 File.separator
-            SmbFile newdir = loginSmb(remoteUrl + BACKUP + DateUtil.getFormatDate() + "/");
+            SmbFile newdir = loginSmb(backupPath + DateUtil.getFormatDate() + "/");
             if (!newdir.exists()) {
                 newdir.mkdirs();
             }
-            SmbFile newFile = loginSmb(newdir + remoteFile.getName());
+            String name = remoteFile.getName();
+            String[] fileSplit = name.split("\\.");
+
+            SmbFile newFile = loginSmb(newdir + fileSplit[0] + A + DateUtil.getFormatDateHMS() + B + fileSplit[1]);
             log.info("将要移动到新文件: {}", newFile);
-            remoteFile.copyTo(newFile);
-            remoteFile.delete();
+//            remoteFile.copyTo(newFile);
+//            remoteFile.delete();
             closeSmb(newFile, newdir, remoteFile);
         }
     }
 
+    @Deprecated
     private Boolean download(SmbFile smbFile) throws IOException {
         if (smbFile.isDirectory()) {
             //进入到设定的目录

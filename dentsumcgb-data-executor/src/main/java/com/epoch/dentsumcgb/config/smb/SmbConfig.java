@@ -28,21 +28,38 @@ public class SmbConfig {
 
     @Value("${smb.hyp}")
     private String hyp;
+    @Value("${smb.epayroll}")
+    private String epayroll;
 
-    @Value("${smb.localPath}")
+
+    @Value("${smb.backupPath}")
+    private String backupPath;
+
+
+    @Value("${smb.local.path}")
     private String localPath;
 
     @Bean("d365")
     @Lazy
     Smb d365() {
         String remoteUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + d365;
-        return new Smb(remoteUrl, localPath + d365);
+        String backupUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + backupPath + d365;
+        return new Smb(remoteUrl, backupUrl);
     }
 
     @Bean("hyp")
     @Lazy
     Smb hyp() {
         String remoteUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + hyp;
-        return new Smb(remoteUrl, localPath + hyp);
+        String backupUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + backupPath + hyp;
+        return new Smb(remoteUrl, backupUrl);
+    }
+
+    @Bean("epayroll")
+    @Lazy
+    Smb epayroll() {
+        String remoteUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + epayroll;
+        String backupUrl = "smb://" + userName + ":" + passWord + "@" + ip + sharePath + backupPath + epayroll;
+        return new Smb(remoteUrl, backupUrl);
     }
 }

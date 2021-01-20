@@ -35,6 +35,6 @@
                              targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
-        <table tableName="t_bpc_staffcost_data"/>
+        <table tableName="t_d365_agl_bspl_data"/>
     </context>
 </generatorConfiguration>

@@ -1,6 +1,8 @@
 package com.epoch.dentsumcgb.util;
 
 import com.epoch.dentsumcgb.entity.BaseData;
+import com.epoch.dentsumcgb.entity.TD365ActCpsData;
+import com.epoch.dentsumcgb.entity.TD365AglBsplData;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Field;
@@ -15,7 +17,6 @@ public class BeanUtil {
 
     public static BaseData revertInputData(String[] title, String[] data, Class<? extends BaseData> clz, Map<String, String> mappingMap)
             throws NoSuchFieldException, InvocationTargetException, IllegalAccessException, InstantiationException {
-
         int len = title.length;
 
         BaseData o= clz.newInstance();
@@ -45,6 +46,13 @@ public class BeanUtil {
         }
         if (type.isAssignableFrom(Integer.class)) {
             m.invoke(o, Integer.parseInt(value));
+        }
+    }
+
+    public static void main(String[] args) {
+        Class t= TD365AglBsplData.class;
+        for (Field s:t.getDeclaredFields()) {
+            System.out.println(s.getName());
         }
     }
 

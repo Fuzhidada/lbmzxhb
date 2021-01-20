@@ -9,21 +9,29 @@ public class ThreadUtil {
     }
 
     //数据量分片大小
-    public static final int SKIP_SIZE = 10000;
-    // 设置每个线程执行插入的数据量为10000 * 10 个线程 即每个文件最大的数据量应为10*10000 超出会产生阻塞问题
-    private static final ExecutorService executor = new ThreadPoolExecutor(1, 100,
+    public static final int SKIP_SIZE = 5000;
+    public static final int WAIT_TIME = 60 * 10;
+
+    private static final ExecutorService executor = new ThreadPoolExecutor(2, 2,
             60, TimeUnit.SECONDS,
-            new LinkedBlockingQueue<>(1000),
-            new ThreadFactoryBuilder().setNameFormat("dentsu-insert-%d").build());
+            new LinkedBlockingQueue<>(5000),
+            new ThreadFactoryBuilder().setNameFormat("dentsu-start-%d").build());
 
     public static ExecutorService getExecutor() {
         return executor;
     }
 
-    private static final ExecutorService cacheExecutor = Executors.newCachedThreadPool(new ThreadFactoryBuilder().setNameFormat("dentsu-insert-%d").build());
+    private static final ExecutorService cacheExecutor = Executors.newCachedThreadPool(
+            new ThreadFactoryBuilder().setNameFormat("dentsu-insert-%d").build());
 
     public static ExecutorService getCacheExecutor() {
         return cacheExecutor;
     }
 
+    private static final ExecutorService fixedExecutor = Executors.newFixedThreadPool(2,
+            new ThreadFactoryBuilder().setNameFormat("dentsu-download-%d").build());
+
+    public static ExecutorService fixedExecutor() {
+        return fixedExecutor;
+    }
 }

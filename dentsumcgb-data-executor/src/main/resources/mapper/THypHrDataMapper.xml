@@ -16,12 +16,16 @@
   </resultMap>
 
   <insert id="batchInsert">
-    insert into t_hyp_fin_data(CostCenter,CostServiceSet,Client,Product,MasterServiceSet,LOBBrand,Account,Year,Entity,Period,Amount)
+    insert into t_hyp_hr_data(CostCenter,CostServiceSet,LOBBrand,HRAccount,Year,Entity,Period,Amount)
     values
     <foreach collection="list" item="item" separator=",">
       (
-      #{item.costcenter},#{item.costserviceset},#{item.client},#{item.product},#{item.masterserviceset},
-      #{item.lobbrand},#{item.account},#{item.year},#{item.entity},#{item.period},#{item.amount}
+      #{item.Company Id},#{item.BPCEntity},
+      #{item.Date},#{item.Datasource},#{item.Datatype},#{item.DataAttribute},#{item.Nominalcode},
+      #{item.MainAccountName},#{item.BPCCode},#{item.Functionalarea},#{item.Networkbrand},#{item.BPCClient},
+      #{item.Clientname},#{item.ServiceSegment},#{item.ServiceSegmentName},#{item.Channel},#{item.ChannelName},
+      #{item.BPCServices},#{item.BPCServicesName},#{item.VendorCode},#{item.Vendor},#{item.Analysiscode},
+      #{item.Analysis},#{item.Currency},#{item.CostCenter},#{item.D365ClientCode},#{item.D365ClientCodeName},#{item.Amount}
       )
     </foreach>
 
